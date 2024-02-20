@@ -1,0 +1,15 @@
+:root {
+    --primary-color: #1B3764;
+}
+body {margin: 0}
+
+.app-header {
+background: var(--primary-color);
+padding: 40px 0 40px 0;
+width: 100%;
+}
+.app-header-content {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto 0 auto;
+}
