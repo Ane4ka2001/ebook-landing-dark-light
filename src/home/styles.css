@@ -2,7 +2,15 @@
     --primary-color: #1B3764;
     --primary-alt-color: #fff;
 }
-body {margin: 0}
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
 
 .app-header {
 background: var(--primary-color);
@@ -38,7 +46,19 @@ margin: 0 33px 0 0;
 }
 .app-navigation {
     margin-right: 26px;
+    color: var(--primary-alt-color);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+    display: grid;
+    grid-template-columns: repeat(5,max-content);
+    gap: 40px;
 }
 .cart-button {
     margin-right: 30px;
+}
+.app-navigation-arrow {
+position: relative;
+top: 2px;
+
 }
