@@ -1,5 +1,6 @@
 :root {
     --primary-color: #1B3764;
+    --primary-alt-color: #fff;
 }
 body {margin: 0}
 
@@ -12,4 +13,32 @@ width: 100%;
     width: 100%;
     max-width: 1300px;
     margin: 0 auto 0 auto;
+    
+    display: grid;
+    align-items: center;
+    grid-template-columns: max-content auto repeat(3, max-content);
+}
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background: var(--primary-alt-color);
+}
+.social-buttons {
+    display:grid;
+    grid-template-columns: repeat(3, 45px);
+    gap: 10px;
+    margin-right: auto;
+}
+
+.app-logo {
+margin: 0 33px 0 0;
+}
+.app-navigation {
+    margin-right: 26px;
+}
+.cart-button {
+    margin-right: 30px;
 }
