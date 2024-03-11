@@ -1,6 +1,8 @@
 :root {
     --primary-color: #1B3764;
     --primary-alt-color: #fff;
+    --primary-alfa-color: #FFCA42;
+
 }
 body {
     margin: 0;
@@ -56,9 +58,16 @@ margin: 0 33px 0 0;
 }
 .cart-button {
     margin-right: 30px;
+    background: var(--primary-color);
+    border: var(--primary-color);
 }
 .app-navigation-arrow {
 position: relative;
 top: 2px;
-
+}
+.order-button {
+    background: var(--primary-alfa-color);
+    font-family: "Cardo";
+    border: var(--primary-alfa-color);
+    
 }
