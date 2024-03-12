@@ -60,6 +60,7 @@ margin: 0 33px 0 0;
     margin-right: 30px;
     background: var(--primary-color);
     border: var(--primary-color);
+    position: relative;
 }
 .app-navigation-arrow {
 position: relative;
@@ -68,6 +69,29 @@ top: 2px;
 .order-button {
     background: var(--primary-alfa-color);
     font-family: "Cardo";
-    border: var(--primary-alfa-color);
-    
+    border: 0cm;
+    color: var(--primary-color);
+    padding: 13px 33px 13px 33px;
 }
+.quantity {
+   border-radius: 50%; 
+   background: var(--primary-alfa-color);
+   position: absolute; top: 0%; right: 0%;
+   font-family: "Inter";
+   font-size: 7px;
+   padding: 3px;
+}
+.style-guide {
+    background: var(--primary-color);
+    font-family: "Cardo";
+    color: var(--primary-alt-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+ .poop {
+    background: var(--primary-alfa-color);
+    width: 55;
+    height: 1;
+ }
