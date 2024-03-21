@@ -4,30 +4,33 @@
     --primary-alfa-color: #FFCA42;
 
 }
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
 }
 
-a{
+a {
     color: inherit;
     text-decoration: none;
 }
 
 .app-header {
-background: var(--primary-color);
-padding: 40px 0 40px 0;
-width: 100%;
+    background: var(--primary-color);
+    padding: 40px 0 40px 0;
+    width: 100%;
 }
+
 .app-header-content {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto 0 auto;
-    
+
     display: grid;
     align-items: center;
     grid-template-columns: max-content auto repeat(3, max-content);
 }
+
 .social-button {
     display: flex;
     justify-content: center;
@@ -36,16 +39,18 @@ width: 100%;
     height: 45px;
     background: var(--primary-alt-color);
 }
+
 .social-buttons {
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 45px);
     gap: 10px;
     margin-right: auto;
 }
 
 .app-logo {
-margin: 0 33px 0 0;
+    margin: 0 33px 0 0;
 }
+
 .app-navigation {
     margin-right: 26px;
     color: var(--primary-alt-color);
@@ -53,34 +58,47 @@ margin: 0 33px 0 0;
     font-size: 17px;
     line-height: 21px;
     display: grid;
-    grid-template-columns: repeat(5,max-content);
+    grid-template-columns: repeat(5, max-content);
     gap: 40px;
 }
+
 .cart-button {
     margin-right: 30px;
     background: var(--primary-color);
     border: var(--primary-color);
     position: relative;
 }
+
 .app-navigation-arrow {
-position: relative;
-top: 2px;
+    position: relative;
+    top: 2px;
 }
+
 .order-button {
     background: var(--primary-alfa-color);
     font-family: "Cardo";
     border: 0cm;
     color: var(--primary-color);
-    padding: 13px 33px 13px 33px;
+    padding: 13px 33px;
+    font-size: 19px;
+    font-weight: 700;
 }
-.quantity {
-   border-radius: 50%; 
-   background: var(--primary-alfa-color);
-   position: absolute; top: 0%; right: 0%;
-   font-family: "Inter";
-   font-size: 7px;
-   padding: 3px;
+
+.order-button_large {
+    padding: 20px 53px;
 }
+
+.cart-button-quantity {
+    border-radius: 50%;
+    background: var(--primary-alfa-color);
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-family: "Inter";
+    font-size: 7px;
+    padding: 3px;
+}
+
 .style-guide {
     background: var(--primary-color);
     font-family: "Cardo";
@@ -90,18 +108,22 @@ top: 2px;
     align-items: center;
     font-size: 50px;
 }
+
 .content {
-    margin: 0 auto 0 auto; 
+    margin: 0 auto 0 auto;
 }
- .cont-1 {
+
+.cont-1 {
     font-family: Cardo;
     font-style: italic;
     margin: 0 auto 0 auto;
 
- }
+}
+
 .h1 {
     font-family: Cardo;
 }
+
 .cont-2 {
     font-family: "Inter", sans-serif;
 }

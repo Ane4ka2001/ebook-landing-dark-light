@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -39,21 +39,26 @@
         <a href="">Services</a>
         <a href="">Contact</a>
       </nav>
-      <button class="cart-button">
+      <button class="cart-button" title="Корзина">
         <img src="./cart.png" alt="" />
-        <div class="quantity">01</div>
-        <button class="order-button"> Order Today</button>
+        <div class="cart-button-quantity">01</div>
+      </button>
+      <button class="order-button"> Order Today</button>
     </div>
   </header>
-  <main class="content">
-  <div class="cont-1">
-    Welcome to Pages
-  </div>
-    <h1 class="h1">Books are uniquely portable magic</h1>
-    <div class="cont-2">There are many variations of passages of Lorem Opsum available, but the majority have suffered atteration in some form.
-  </div>
-  <button class="order-button"> Order Today</button>
-  <img src="./Book.png" alt="" />
+  <main>
+    <section class="jumbotron">
+      <strong class="jumbotron-label">
+        Welcome to Pages
+      </strong>
+      <h1 class="jumbotron-heading">Books are uniquely portable magic</h1>
+      <p class="jumbotron-description">There are many variations of passages of Lorem Opsum available, but the majority
+        have suffered
+        atteration in some form.
+      </p>
+      <button class="order-button order-button_large"> Order Today</button>
+      <img src="./Book.png" alt="" />
+    </section>
   </main>
   <footer>подвал</footer>
 </body>
