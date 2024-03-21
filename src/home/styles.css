@@ -90,8 +90,18 @@ top: 2px;
     align-items: center;
     font-size: 50px;
 }
- .poop {
-    background: var(--primary-alfa-color);
-    width: 55;
-    height: 1;
+.content {
+    margin: 0 auto 0 auto; 
+}
+ .cont-1 {
+    font-family: Cardo;
+    font-style: italic;
+    margin: 0 auto 0 auto;
+
  }
+.h1 {
+    font-family: Cardo;
+}
+.cont-2 {
+    font-family: "Inter", sans-serif;
+}
