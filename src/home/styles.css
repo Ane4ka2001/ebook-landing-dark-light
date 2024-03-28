@@ -116,8 +116,8 @@ a {
 .jumbotron-content {
     background-color: var(--primary-color);
     display: grid;
-    grid-template-columns: max-content auto repeat(2, max-content);
-    grid-column-gap: 66px;
+    grid-template-columns: 614px auto;
+    grid-column-gap: 95px;
     grid-template-rows: max-content auto repeat(4, max-content);
     align-items: center;
     width: 100%;
@@ -155,16 +155,19 @@ a {
     color: var(--primary-beta-color);
 }
 
-.read-free {
-    background: var(--primary-color);
-    border: 0cm;
+.link-button {
+    border: none;
+    background: transparent;
     color: var(--primary-alt-color);
-    width: 157px;
-    height: 27px;
-    text-decoration: underline;
     font-family: Cardo;
     font-size: 19px;
     font-weight: bolder;
+    padding: 3px 4px;
+    border-bottom: 1px solid var(--primary-alt-color);
+}
+
+.jumbotron-button {
+    margin-right: 37px;
 }
 
 .details {
