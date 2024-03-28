@@ -2,7 +2,7 @@
     --primary-color: #1B3764;
     --primary-alt-color: #fff;
     --primary-alfa-color: #FFCA42;
-
+    --primary-beta-color: #b4c7e7;
 }
 
 body {
@@ -109,21 +109,89 @@ a {
     font-size: 50px;
 }
 
-.content {
-    margin: 0 auto 0 auto;
+.jumbotron {
+    background: var(--primary-color);
 }
 
-.cont-1 {
+.jumbotron-content {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: max-content auto repeat(2, max-content);
+    grid-column-gap: 66px;
+    grid-template-rows: max-content auto repeat(4, max-content);
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.jumbotron-label {
     font-family: Cardo;
     font-style: italic;
-    margin: 0 auto 0 auto;
-
+    font-weight: lighter;
+    color: var(--primary-alt-color);
+    font-size: 24px;
 }
 
-.h1 {
+.jumbotron-label::before {
+    content: ' ';
+    width: 34px;
+    max-width: 150px;
+    height: 2px;
+    background: var(--primary-alfa-color);
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.jumbotron-heading {
     font-family: Cardo;
+    font-size: 65px;
+    color: var(--primary-alt-color);
 }
 
-.cont-2 {
-    font-family: "Inter", sans-serif;
+.jumbotron-description {
+    font-family: Inter;
+    font-size: 19px;
+    color: var(--primary-beta-color);
+}
+
+.read-free {
+    background: var(--primary-color);
+    border: 0cm;
+    color: var(--primary-alt-color);
+    width: 157px;
+    height: 27px;
+    text-decoration: underline;
+    font-family: Cardo;
+    font-size: 19px;
+    font-weight: bolder;
+}
+
+.details {
+    font-size: 24px;
+    font-family: Cardo;
+    color: var(--primary-alt-color);
+    display: grid;
+    grid-template-columns: max-content auto repeat(3, max-content);
+    grid-column-gap: 80px;
+    padding: 50px 0 0 0;
+}
+
+.details ::before {
+    content: " ";
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--primary-alfa-color);
+    display: inline-block;
+}
+
+.details-alfa {
+    display: grid;
+    grid-template-columns: max-content auto repeat(3, max-content);
+    color: var(--primary-beta-color);
+    grid-column-gap: 80px;
+    font-family: Inter;
+    font-size: 18px;
+    padding-left: 20px;
 }
