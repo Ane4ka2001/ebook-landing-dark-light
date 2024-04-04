@@ -1,0 +1,41 @@
+#dynamic .dialog {
+  border: none;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+}
+
+#dynamic .dialog::backdrop {
+  background: var(--primary-color);
+  opacity: 80%;
+}
+
+#dynamic .dialog-header {
+  color: var(--primary-color);
+  background: var(--primary-alfa-color);
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  padding: 35px 66px 35px 76px;
+  
+}
+
+#dynamic .dialog-header p {
+  font: 50px/60px "Cardo";
+  font-weight: 700;
+  margin: 0;
+}
+
+#dynamic .dialog-header-close {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  
+  background: transparent;
+  border: none;
+}
+
+#dynamic .dialog-header-close svg {
+  width: 20px;
+  height: 20px;
+}
