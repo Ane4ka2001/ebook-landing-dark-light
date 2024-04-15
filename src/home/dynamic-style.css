@@ -39,3 +39,23 @@
   width: 20px;
   height: 20px;
 }
+
+#dynamic .dialog-main {
+  padding: 65px 77px;
+  border-bottom: 1px solid var(--primary-color-semiopacity);
+}
+
+#dynamic .dialog-footer {
+  padding: 25px 77px 65px;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  gap: 60px;
+}
+
+#dynamic .dialog-checkout {
+  background: var(--primary-alfa-color);
+  border: none;
+  padding: 20px 0;
+  font: 24px "Cardo";
+  font-weight: 700;
+}
