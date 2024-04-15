@@ -104,6 +104,7 @@ a {
 
 .jumbotron {
     background: var(--primary-color);
+
 }
 
 .jumbotron-content {
@@ -116,6 +117,7 @@ a {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+    padding: 95px 0px 115px 0px
 }
 
 .jumbotron-label {
@@ -190,4 +192,165 @@ a {
     font-family: Inter;
     font-size: 18px;
     padding-left: 20px;
+}
+
+.Author-books {
+    background: var(--primary-alt-color);
+
+}
+
+.Author-books-content {
+    background-color: var(--primary-alt-color);
+    display: grid;
+    grid-template-rows: 2;
+    width: 100%;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 145px 0px 150px 0px;
+}
+
+.Author-books-content-label {
+    font: 45px/54px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 auto;
+    align-items: center;
+}
+
+.Author-books-content-section {
+    display: grid;
+    grid-template-columns: 621px auto;
+    padding: 57px 0px;
+    grid-column-gap: 66px;
+}
+
+.book-1 {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-column-gap: 40px;
+}
+
+.book-1-label {
+    font: 32px/38px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.book-1-content {
+    font: 19px/34px "Inter";
+    font-weight: 400;
+    color: var(--primary-grey-color);
+}
+
+.book-2 {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-column-gap: 40px;
+}
+
+.book-2-label {
+    font: 32px/38px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.book-2-content {
+    font: 19px/34px "Inter";
+    font-weight: 400;
+    color: var(--primary-grey-color);
+}
+
+.About-author {
+    background: var(--primary-gamma-color);
+}
+
+.About-author-content {
+    width: 100%;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 150px 0px 150px 0px;
+    display: grid;
+    grid-template-columns: 550px auto;
+    grid-column-gap: 142px;
+}
+
+.Author-info {
+    display: grid;
+    grid-template-rows: max-content auto repeat(4, max-content);
+}
+
+.Author-info-heading {
+    font: 45px/54px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color)
+}
+
+.Author-info-description {
+    font: 19px/34px "Inter";
+    font-weight: 400;
+    color: var(--primary-grey-color);
+}
+
+.Author-info-card {
+    display: grid;
+    grid-template-columns: 130px auto;
+}
+
+.more-books {
+    background: var(--primary-alt-color);
+}
+
+.more-books-content {
+    width: 100%;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 130px 0px 140px 0px;
+    display: grid;
+    grid-template-rows: max-content auto repeat(2, max-content);
+    grid-row-gap: 62px;
+}
+
+.more-books-heading {
+    font: 45px/54px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: auto;
+    align-items: center;
+}
+
+.more-books-description {
+    display: grid;
+    grid-template-columns: max-content auto repeat(4, max-content);
+    grid-column-gap: 97px;
+}
+
+.logo-1-heading {
+    font: 24px/30px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    align-items: center;
+}
+
+.logo-2-heading {
+    font: 24px/30px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    align-items: center;
+}
+
+.logo-3-heading {
+    font: 24px/30px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    align-items: center;
+}
+
+.logo-4-heading {
+    font: 24px/30px "Cardo";
+    font-weight: 700;
+    color: var(--primary-color);
+    align-items: center;
 }
