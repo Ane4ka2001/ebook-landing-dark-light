@@ -218,6 +218,15 @@ a {
     align-items: center;
 }
 
+.Author-books-content-label::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    background: #000;
+    margin: 22px auto 0;
+}
+
 .Author-books-content-section {
     display: grid;
     grid-template-columns: 621px auto;
@@ -284,7 +293,7 @@ a {
 .Author-info-heading {
     font: 45px/54px "Cardo";
     font-weight: 700;
-    color: var(--primary-color)
+    color: var(--primary-color);
 }
 
 .Author-info-description {
