@@ -17,7 +17,7 @@
   grid-template-columns: auto min-content;
   align-items: center;
   padding: 35px 66px 35px 76px;
-  
+
 }
 
 #dynamic .dialog-header p {
@@ -30,7 +30,7 @@
   width: 40px;
   height: 40px;
   padding: 10px;
-  
+
   background: transparent;
   border: none;
 }

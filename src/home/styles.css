@@ -395,3 +395,33 @@ a {
     color: var(--primary-color);
     align-items: center;
 }
+
+.Copy-book {
+    background-color: var(--primary-color);
+}
+
+.Copy-book-content {
+    width: 100%;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 37px 310px 37px 276px;
+    display: grid;
+    grid-template-columns: max-content auto repeat(2, max-content)
+}
+
+.Copy-book-description {
+    padding: 83px 127px 83px 0px;
+}
+
+.Copy-book-heading {
+    font: 45px/54px "Cardo";
+    font-weight: 700;
+    color: var(--primary-alt-color);
+}
+
+.Copy-book-info {
+    font-size: 19 px;
+    font-family: "Inter";
+    font-weight: 400;
+}
