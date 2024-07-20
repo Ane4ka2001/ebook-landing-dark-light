@@ -1,4 +1,5 @@
 const CART_STORE = {
+  // Создание области памяти где лежат элементы и характеристики
   items: [
     {
       name: "Atomic One’s",
@@ -19,14 +20,17 @@ const CART_STORE = {
       imageSrc: "./Book-2.png",
     },
   ],
+  // Генерируем HTML на основе объекта книги
   getBookHtml: (book) => {
     const result = `<div>${book.name} $${book.price}</div>`;
 
     return result;
   },
+  // Удаляем книгу
   remove: (itemIndex) => {
     console.log("Удалить книжку", itemIndex);
   },
+  // Считаем стоимость всех книг
   getTotal() {
     let sum = 0;
 
@@ -35,6 +39,7 @@ const CART_STORE = {
     }
     return sum;
   },
+  /** Генерируем HTML для всех книг в корзине */
   getCardsHTML() {
     const bookCards = this.items.map(this.getBookHtml).join("");
     return bookCards;
@@ -42,12 +47,13 @@ const CART_STORE = {
 };
 
 function installCartFeature() {
-  const cartButton = document.querySelector("#cart-button");
-
+  // Создаем элемент диалога с пользователем
   const dialog = document.createElement("dialog");
+  // Навешиваем CSS класс на этот диалог
   dialog.classList.add("dialog");
 
-  const bookCards = CART_STORE.getCardsHTML();
+  // Формируем внешний вид диалога корзины
+  const bookCardsHTML = CART_STORE.getCardsHTML();
   const cartTotal = CART_STORE.getTotal();
   dialog.innerHTML = `
   <div class='dialog-content'>
@@ -59,7 +65,7 @@ function installCartFeature() {
         </svg>
       </button>
     </div>
-    <div class="dialog-main">${bookCards}</div>
+    <div class="dialog-main">${bookCardsHTML}</div>
     <div class="dialog-footer">
       <div>
         <span>Sub-Total</span>
@@ -67,29 +73,39 @@ function installCartFeature() {
       </div>
       <button class="dialog-checkout" id="checkout">Continue to Checkout</button>
     </div>
-  </div>
-  `;
-  const closeButton = dialog.querySelector("#close");
-  const dialogContent = dialog.children[0];
+  </div>`;
   document.body.appendChild(dialog);
+  // Закончили формировать, вставили в документ
 
+  // Находим кнопку закрытия диалога
+  const closeButton = dialog.querySelector("#close");
+  // Создаем функцию закрытия диалога
   const closeDialog = () => {
     dialog.close();
   };
-
-  const checkoutButton = dialog.querySelector("#checkout");
-  checkoutButton.addEventListener("click", closeDialog);
-
-  dialog.addEventListener("click", closeDialog);
+  // Закрываем диалог при клике на кнопку закрытия
   closeButton.addEventListener("click", closeDialog);
+  // Закрыть диалог при клике на диалог
+  dialog.addEventListener("click", closeDialog);
+  // Достаем первого ребенка-элемента "диалога"
+  const dialogContent = dialog.children[0];
+  // При клике не разрешаем слушать событие никому выше dialogContent
   dialogContent.addEventListener("click", (event) => {
     event.stopPropagation();
   });
 
+  // Находим кнопку "Продолжить покупки"
+  const checkoutButton = dialog.querySelector("#checkout");
+  // При клике на нее закрываем диалог
+  checkoutButton.addEventListener("click", closeDialog);
+
+  // Находим кнопку корзины
+  const cartButton = document.querySelector("#cart-button");
+  // Создаем функцию открытия диалога
   const cartButtonClickListener = () => {
     dialog.showModal();
   };
-
+  // При клике на корзину открываем диалог
   cartButton.addEventListener("click", cartButtonClickListener);
 }
 
