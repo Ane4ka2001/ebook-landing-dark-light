@@ -1,34 +1,63 @@
+const DEFAULT_BOOKS = [
+  {
+    name: "Atomic One’s 2",
+    price: 30,
+    count: 2,
+    imageSrc: "./Book-2.png",
+  },
+  {
+    name: "Atomic One’s",
+    price: 30,
+    count: 1,
+    imageSrc: "./Book-2.png",
+  },
+  {
+    name: "Atomic One’s 3",
+    price: 30,
+    count: 1,
+    imageSrc: "./Book-2.png",
+  },
+];
+
+// Пробуем достать из хранилища книги
+const booksFromStorage = localStorage.getItem("books");
+// Если в хранилище ничего нет - добавляем туда дефолтные книжки
+if (booksFromStorage === null) {
+  localStorage.setItem("books", JSON.stringify(DEFAULT_BOOKS));
+}
+// В хранилище все лежит как строка. "Парсим" строку обратно в массив
+const booksFromStorageParsed = booksFromStorage
+  ? JSON.parse(booksFromStorage)
+  : DEFAULT_BOOKS;
+
 const CART_STORE = {
   // Создание области памяти где лежат элементы и характеристики
-  items: [
-    {
-      name: "Atomic One’s",
-      price: 30,
-      count: 1,
-      imageSrc: "./Book-2.png",
-    },
-    {
-      name: "Atomic One’s 2",
-      price: 30,
-      count: 1,
-      imageSrc: "./Book-2.png",
-    },
-    {
-      name: "Atomic One’s 3",
-      price: 30,
-      count: 1,
-      imageSrc: "./Book-2.png",
-    },
-  ],
+  items: booksFromStorageParsed,
   // Генерируем HTML на основе объекта книги
-  getBookHtml: (book) => {
-    const result = `<div>${book.name} $${book.price}</div>`;
+  getBookHtml(book, bookIndex) {
+    const total = book.price * book.count;
+
+    const result = `<div>
+      <img src="${book.imageSrc}" />
+      <div>
+        <p>${book.name}</p>
+        <p>$${total.toFixed(2)} USD</p>
+      </div>
+      <input disabled value="${book.count}" />
+      <button id="remove-button" data-bookindex="${bookIndex}">Remove</button>
+    </div>`;
 
     return result;
   },
   // Удаляем книгу
-  remove: (itemIndex) => {
-    console.log("Удалить книжку", itemIndex);
+  remove(indexToRemove) {
+    this.items = this.items.filter((book, bookIndex) => {
+      const shouldOstavit = bookIndex !== indexToRemove;
+      return shouldOstavit;
+    });
+
+    // Берем все актуальные книги из корзины и сохраняем в хранилище
+    localStorage.setItem("books", JSON.stringify(this.items));
   },
   // Считаем стоимость всех книг
   getTotal() {
@@ -51,11 +80,14 @@ function installCartFeature() {
   const dialog = document.createElement("dialog");
   // Навешиваем CSS класс на этот диалог
   dialog.classList.add("dialog");
+  // Вставили в документ
+  document.body.appendChild(dialog);
 
   // Формируем внешний вид диалога корзины
-  const bookCardsHTML = CART_STORE.getCardsHTML();
-  const cartTotal = CART_STORE.getTotal();
-  dialog.innerHTML = `
+  const renderCart = () => {
+    const bookCardsHTML = CART_STORE.getCardsHTML();
+    const cartTotal = CART_STORE.getTotal();
+    dialog.innerHTML = `
   <div class='dialog-content'>
     <div class='dialog-header'>
       <p class='dialog-header-title'>Your cart</p>
@@ -74,8 +106,24 @@ function installCartFeature() {
       <button class="dialog-checkout" id="checkout">Continue to Checkout</button>
     </div>
   </div>`;
-  document.body.appendChild(dialog);
-  // Закончили формировать, вставили в документ
+    dialog.querySelectorAll("#remove-button").forEach((removeButton) => {
+      removeButton.addEventListener("click", () => {
+        const bookIndexString = removeButton.getAttribute("data-bookindex");
+        const bookIndex = Number(bookIndexString);
+        CART_STORE.remove(bookIndex);
+        renderCart();
+      });
+    });
+
+    // Достаем первого ребенка-элемента "диалога"
+    const dialogContent = dialog.children[0];
+    // При клике не разрешаем слушать событие никому выше dialogContent
+    dialogContent.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  };
+
+  renderCart();
 
   // Находим кнопку закрытия диалога
   const closeButton = dialog.querySelector("#close");
@@ -87,12 +135,6 @@ function installCartFeature() {
   closeButton.addEventListener("click", closeDialog);
   // Закрыть диалог при клике на диалог
   dialog.addEventListener("click", closeDialog);
-  // Достаем первого ребенка-элемента "диалога"
-  const dialogContent = dialog.children[0];
-  // При клике не разрешаем слушать событие никому выше dialogContent
-  dialogContent.addEventListener("click", (event) => {
-    event.stopPropagation();
-  });
 
   // Находим кнопку "Продолжить покупки"
   const checkoutButton = dialog.querySelector("#checkout");
