@@ -59,3 +59,12 @@
   font: 24px "Cardo";
   font-weight: 700;
 }
+
+#dynamic .dialog-remove-button {
+  font: 35px "Cardo";
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--primary-color);
+  cursor: pointer;
+}

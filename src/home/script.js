@@ -39,13 +39,13 @@ const CART_STORE = {
     const total = book.price * book.count;
 
     const result = `<div>
-      <img src="${book.imageSrc}"alt="Image" height="175px" width="130px" />
+      <img src="${book.imageSrc}" alt="Image" height="175px" width="130px" />
       <div>
         <p>${book.name}</p>
         <p>$${total.toFixed(2)} USD</p>
       </div>
       <input disabled value="${book.count}" />
-      <button id="remove-button" data-bookindex="${bookIndex}">Remove</button>
+      <button id="remove-button" class="dialog-remove-button" data-bookindex="${bookIndex}">Remove</button>
     </div>`;
 
     return result;
@@ -150,6 +150,7 @@ function installCartFeature() {
   };
   // При клике на корзину открываем диалог
   cartButton.addEventListener("click", cartButtonClickListener);
+
 }
 
 function main() {
