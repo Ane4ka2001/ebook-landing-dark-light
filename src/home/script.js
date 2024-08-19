@@ -21,24 +21,25 @@ const DEFAULT_BOOKS = [
 
 // Пробуем достать из хранилища книги
 const booksFromStorage = localStorage.getItem("books");
-// Если в хранилище ничего нет - добавляем туда дефолтные книжки
-if (booksFromStorage === null) {
+
+// В хранилище все лежит как строка. "Парсим" строку обратно в массив
+let booksFromStorageParsed;
+if (!!booksFromStorage) {
+  booksFromStorageParsed = JSON.parse(booksFromStorage);
+} else {
+  booksFromStorageParsed = DEFAULT_BOOKS;
+  // Если в хранилище ничего нет - добавляем туда дефолтные книжки
   localStorage.setItem("books", JSON.stringify(DEFAULT_BOOKS));
 }
-// В хранилище все лежит как строка. "Парсим" строку обратно в массив
-const booksFromStorageParsed = booksFromStorage
-  ? JSON.parse(booksFromStorage)
-  : DEFAULT_BOOKS;
-
 const CART_STORE = {
   // Создание области памяти где лежат элементы и характеристики
   items: booksFromStorageParsed,
   // Генерируем HTML на основе объекта книги
-  getBookHtml(book, bookIndex) {
+  getBookHtml: function getBookHtml(book, bookIndex) {
     const total = book.price * book.count;
 
     const result = `<div>
-      <img src="${book.imageSrc}" />
+      <img src="${book.imageSrc}"alt="Image" height="175px" width="130px" />
       <div>
         <p>${book.name}</p>
         <p>$${total.toFixed(2)} USD</p>

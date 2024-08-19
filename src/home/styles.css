@@ -409,4 +409,5 @@ a {
     font-size: 19 px;
     font-family: "Inter";
     font-weight: 400;
+    color: var(--primary-beta-color);
 }
