@@ -150,12 +150,10 @@ function installCartFeature() {
   };
   // При клике на корзину открываем диалог
   cartButton.addEventListener("click", cartButtonClickListener);
-  //удали это как закончишь с корзиной (ты молодец)
-  cartButtonClickListener();
-}
 
-function main() {
-  installCartFeature();
-}
 
-document.addEventListener("DOMContentLoaded", main);
+  function main() {
+    installCartFeature();
+  }
+
+  document.addEventListener("DOMContentLoaded", main);
