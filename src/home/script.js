@@ -150,10 +150,9 @@ function installCartFeature() {
   };
   // При клике на корзину открываем диалог
   cartButton.addEventListener("click", cartButtonClickListener);
+}
+function main() {
+  installCartFeature();
+}
 
-
-  function main() {
-    installCartFeature();
-  }
-
-  document.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", main);
