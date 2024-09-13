@@ -58,6 +58,7 @@
   padding: 20px 0;
   font: 24px "Cardo";
   font-weight: 700;
+  color: var(--primary-color);
 }
 
 #dynamic .dialog-remove-button {
@@ -67,4 +68,36 @@
   padding: 0;
   color: var(--primary-color);
   cursor: pointer;
+}
+
+#dynamic .dialog-footer-sub-total {
+  font: 24px "Cardo";
+  color: var(--primary-color);
+}
+
+#dynamic .cart-body {
+  display: grid;
+  grid-template-columns: 180px 150px 325px;
+}
+
+#dynamic .book-name {
+  font: 24px "Cardo";
+  color: var(--primary-color);
+}
+
+#dynamic .book-total {
+  font: 20px "Inter";
+  color: var(--primary-grey-color)
+}
+
+#dynamic .book-count {
+  width: 120px;
+  height: 65px;
+  color: var(--primary-grey-color);
+}
+
+#dynamic .dialog-footer-sub-total-sum {
+  Font: 20px "Inter";
+  color: var(--primary-color);
+  font-weight: bold;
 }

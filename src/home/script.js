@@ -38,13 +38,13 @@ const CART_STORE = {
   getBookHtml: function getBookHtml(book, bookIndex) {
     const total = book.price * book.count;
 
-    const result = `<div>
+    const result = `<div class="cart-body">
       <img src="${book.imageSrc}" alt="Image" height="175px" width="130px" />
       <div>
-        <p>${book.name}</p>
-        <p>$${total.toFixed(2)} USD</p>
+        <p class="book-name">${book.name}</p>
+        <p class="book-total">$${total.toFixed(2)} USD</p>
       </div>
-      <input disabled value="${book.count}" />
+      <input disabled value="${book.count}" class="book-count" />
       <button id="remove-button" class="dialog-remove-button" data-bookindex="${bookIndex}">Remove</button>
     </div>`;
 
@@ -101,8 +101,8 @@ function installCartFeature() {
     <div class="dialog-main">${bookCardsHTML}</div>
     <div class="dialog-footer">
       <div>
-        <span>Sub-Total</span>
-        <strong>$ ${cartTotal} USD</strong>
+        <span class="dialog-footer-sub-total">Sub-Total</span>
+        <strong class="dialog-footer-sub-total-sum">$ ${cartTotal} USD</strong>
       </div>
       <button class="dialog-checkout" id="checkout">Continue to Checkout</button>
     </div>
@@ -150,7 +150,8 @@ function installCartFeature() {
   };
   // При клике на корзину открываем диалог
   cartButton.addEventListener("click", cartButtonClickListener);
-
+  //удали это как закончишь с корзиной (ты молодец)
+  cartButtonClickListener();
 }
 
 function main() {
